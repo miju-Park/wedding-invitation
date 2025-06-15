@@ -1,16 +1,22 @@
 ---
-import '../styles/global.css';
-const { content } = Astro.props;
+import 'aos/dist/aos.css';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>우리 결혼해요 💍</title>
+  </head>
+  <body
+    class="bg-gray-50 text-gray-800 font-sans min-h-screen flex items-center justify-center"
+  >
+    <div class="w-full max-w-md px-4">
+      <slot />
+    </div>
+		<script>
+			import { aosInit } from "../js/aos";
+			// runs on initial page load
+			aosInit();
+		</script>
+  </body>
 </html>

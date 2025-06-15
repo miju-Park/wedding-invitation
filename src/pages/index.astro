@@ -1,25 +1,31 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import BaseLayout from '../layouts/main.astro';
+import "../styles/global.css";
 ---
+<BaseLayout>
+  <section class="text-center py-20" data-aos="fade-up">
+    <h1 class="text-4xl font-bold mb-4">초대합니다</h1>
+    <p class="text-lg">저희 결혼식에 소중한 발걸음을 초대합니다.</p>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+  <section class="py-20 bg-white" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-center mb-4">💒 웨딩홀</h2>
+    <p class="text-center">서울 강남구 역삼동 123-45 00웨딩홀</p>
+  </section>
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
-</html>
+  <section class="py-20 bg-gray-100" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-center mb-4">📞 혼주 연락처</h2>
+    <ul class="text-center">
+      <li>신랑 아버지: 010-0000-0000</li>
+      <li>신부 어머니: 010-1111-1111</li>
+    </ul>
+  </section>
+
+  <section class="py-20 bg-white" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-center mb-4">💳 계좌번호</h2>
+    <ul class="text-center">
+      <li>신랑: 국민 123456-78-910111</li>
+      <li>신부: 우리 111222-33-444555</li>
+    </ul>
+  </section>
+</BaseLayout>
