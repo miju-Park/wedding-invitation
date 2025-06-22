@@ -3,6 +3,11 @@ import BaseLayout from '../layouts/main.astro';
 import "../styles/global.css";
 import  Calendar from '../components/Calendar';
 import Gallery from '../components/Gallery';
+import NaverMap from '../components/NaverMap';
+import MapNavigationButtons from '../components/MapNavigationButtons';
+
+const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
+
 ---
 <BaseLayout>
 	<section
@@ -59,8 +64,57 @@ import Gallery from '../components/Gallery';
 
   <section class="py-20 bg-white" data-aos="fade-up">
     <h2 class="text-2xl font-semibold text-center mb-4">💒 웨딩홀</h2>
-    <p class="text-center">서울 강남구 역삼동 123-45 00웨딩홀</p>
+    <p class="text-center">세인트메리엘 1층 메리엘홀</p>
+    <p class="text-center text-gray-500 mb-4">서울 강남구 논현로79길 72</p>
+    <NaverMap client:load  latitude={37.4960525}, longitude ={127.0328914} clientId={clientKey}  />
   </section>
+  <section class="max-w-xl mx-auto px-4 py-10 text-left text-sm leading-relaxed space-y-6">
+    <div>
+      <h3 class="font-semibold text-brown-700">네비게이션 이용 시</h3>
+      <p>
+        서울 강남구 논현로 79길 72 올림피아센터 빌딩<br />
+        <span class="text-gray-500 text-sm">
+          (서울 강남구 역삼동 828-10 올림피아센터 빌딩)
+        </span>
+      </p>
+      <MapNavigationButtons 
+        client:load
+        lat={37.4960525}
+        lng={127.0328914}
+        placeName="세인트메리엘 메리엘홀"
+      />
+
+    </div>
+  
+    <div>
+      <h3 class="font-semibold text-brown-700">지하철 이용 시</h3>
+      <p>
+        강남역 2호선 1번 출구에서 약 200m 직진, 우리은행에서 우회전 후 약 300m 직진<br />
+        강남역 신분당선 4번 출구에서 약 30m 직진, 358타워에서 좌회전 후 약 300m 직진
+      </p>
+    </div>
+  
+    <div>
+      <h3 class="font-semibold text-brown-700">버스 이용 시</h3>
+      <p>
+        <span class="font-medium text-blue-600">간선버스(파랑)</span><br />
+        140, 146, 341, 360, 400, 402, 420, 440, 441, 452, 470, 541, 542, 740, 741
+      </p>
+      <p class="mt-1">
+        <span class="font-medium text-red-500">광역버스(빨강)</span><br />
+        9404, 9408, M4403, M4434, M5438, M6427, M6439, M7412
+      </p>
+    </div>
+  
+    <div>
+      <h3 class="font-semibold text-brown-700">셔틀버스 이용 시</h3>
+      <p>
+        강남역 1번 출구에서 셔틀버스 이용<br />
+        <span class="text-gray-500 text-sm">(예식 진행 한 시간 전부터 운행)</span>
+      </p>
+    </div>
+  </section>
+  
 
   <section class="py-20 bg-gray-100" data-aos="fade-up">
     <h2 class="text-2xl font-semibold text-center mb-4">📞 혼주 연락처</h2>
