@@ -45,10 +45,15 @@ const MapNavigationButtons = ({ lat, lng, placeName }: MapNavigationButtonsProps
   };
 
   return (
-    <div className="space-x-2 mt-4">
-      <button onClick={openNaver} className="px-4 py-2 bg-green-500 text-white rounded-md">네이버 지도</button>
-      <button onClick={openKakao} className="px-4 py-2 bg-yellow-400 text-black rounded-md">카카오맵</button>
-      <button onClick={openTmap} className="px-4 py-2 bg-blue-600 text-white rounded-md">티맵</button>
+    <div className="space-x-2 mt-4 flex">
+      <button onClick={openNaver} className="flex items-center gap-1 px-4 py-2 bg-green-500 text-white rounded-md">
+        <img src={'/images/naver_map.webp'} className="w-4 h-4"/> 네이버 지도</button>
+      <button onClick={openKakao} className="px-4 py-2 items-center flex gap-1 bg-yellow-400 text-black rounded-md">
+        <img src={'/images/kakaot_logo.jpeg'} className="w-4 h-4"/> 
+        카카오맵
+        </button>
+      <button onClick={openTmap} className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded-md">
+        <img className="W-4 h-4" src="/images/tmap_logo.svg"/> 티맵</button>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-const images = Array.from({ length: 12 }, (_, i) => `/images/img${i}.JPG`);
+const images = Array.from({ length: 12 }, (_, i) => `/images/img${i}.jpg`);
 
 function Gallery() {
   const swiperRef = useRef<any>(null);
