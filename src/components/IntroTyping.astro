@@ -1,0 +1,86 @@
+<style>
+  .typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #666;
+    width: 0;
+    animation:
+      typing 3s steps(22, end) 1s forwards,
+      /* 1초 뒤 시작 */ blink 0.8s infinite 1s; /* 커서 깜빡임도 1초 뒤 시작 */
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 22ch;
+    } /* 글자 길이에 맞춤 */
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .slide-up {
+    animation: slideUp 1s ease forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+</style>
+
+<div
+  id="intro"
+  class="fixed inset-0 flex flex-col w-full h-dvh justify-center items-center z-50"
+  style="background-color: oklch(95% 0.016 73.684);"
+>
+  <!-- 하트 먼저 보임 -->
+  <div class="text-red-300 text-center animate-bounce mb-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-heart"
+    >
+      <path
+        d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+      ></path>
+    </svg>
+  </div>
+
+  <!-- 1초 딜레이 후 타이핑 시작 -->
+  <h1
+    id="intro-text"
+    class="typing-text w-full block text-xl font-bold text-red-300"
+  >
+    고승현 ♥︎ 박미주. 저희 결혼합니다
+  </h1>
+</div>
+
+<script>
+  setTimeout(() => {
+    const intro = document.getElementById("intro");
+    intro?.classList?.add("slide-up");
+
+    intro?.addEventListener("animationend", () => {
+      intro?.remove();
+    });
+  }, 5000); // (1초 delay + 3s 타이핑 + 1s 대기)
+</script>

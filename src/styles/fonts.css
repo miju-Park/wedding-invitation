@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url("../assets/fonts/NanumSquareRoundR.woff2") format("woff2"),
+    url("../assets/fonts/NanumSquareRoundR.woff") format("woff"),
+    url("../assets/fonts/NanumSquareRoundR.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NanumJungHagSaeng";
+  src: url("../assets/fonts/NanumJungHagSaeng.woff2") format("woff2"),
+    url("../assets/fonts/NanumJungHagSaeng.woff") format("woff"),
+    url("../assets/fonts/NanumJungHagSaeng.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

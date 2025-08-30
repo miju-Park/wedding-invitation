@@ -7,29 +7,30 @@ import NaverMap from "../components/NaverMap";
 import MapNavigationButtons from "../components/MapNavigationButtons";
 import Account from "../components/Account";
 import NoticesSwiper from "../components/NoticesSwiper";
+import IntroTyping from "../components/IntroTyping.astro";
 
 const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
 ---
 
 <BaseLayout>
   <section
-    class="relative h-[80vh] w-full bg-cover bg-center text-white"
-    style="background-image: url('/images/cover.jpg');"
+    class="relative h-[98vh] w-full bg-cover bg-center text-white"
+    style="background-image: url('/images/cover.webp');"
     data-aos="fade-up"
   >
-    <!-- 어두운 오버레이 -->
-    <div class="absolute inset-0 bg-black/40"></div>
-
+    <IntroTyping />
     <!-- 텍스트 콘텐츠 -->
     <div
       class="relative z-10 flex flex-col justify-between h-full px-6 py-10 text-center"
+      data-aos="fade-up"
+      data-aos-delay="5300"
     >
-      <h1 class="font-noto text-3xl md:text-5xl font-bold" data-aos="fade-down">
+      <h1 class="font-noto text-3xl md:text-5xl font-bold text-red-300">
         We’re Getting Married!
       </h1>
-      <div class="text-xl md:text-2xl">
-        <p data-aos="fade-up" data-aos-delay="300">2025.11.22 (토) 13:00</p>
-        <p data-aos="fade-up" data-aos-delay="300">세인트메리엘 메리엘홀</p>
+      <div class="text-xl md:text-2xl text-black">
+        <p>2025.11.22 (토) 13:00</p>
+        <p>세인트메리엘 메리엘홀</p>
       </div>
     </div>
   </section>
@@ -40,7 +41,7 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
       소중한 분들을 초대합니다.
     </h2>
     <div class="whitespace-pre-line">
-      <p>오랜 기림 속에서</p>
+      <p>오랜 기다림 속에서</p>
       <p>저희 두 사람, 서로의 하루가 되어</p>
       <p>함께 웃으며 살아가기로 약속했습니다.</p>
     </div>
@@ -198,7 +199,7 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
           client:load
           title="신부측"
           accounts={[
-            { name: "박상기", bank: "우리은행", account: "11111111" },
+            // { name: "박상기", bank: "우리은행", account: "11111111" },
             { name: "김흥순", bank: "우리은행", account: "11111111" },
             { name: "박미주", bank: "우리은행", account: "1002645365279" },
           ]}

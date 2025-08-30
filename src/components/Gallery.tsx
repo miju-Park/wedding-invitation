@@ -1,8 +1,9 @@
 import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { ImageViewer } from './ImageViewer';
 
-const images = Array.from({ length: 12 }, (_, i) => `/images/img${i}.jpg`);
+const images = Array.from({ length: 12 }, (_, i) => `/images/img${i}.webp`);
 
 function Gallery() {
   const swiperRef = useRef<any>(null);
@@ -29,18 +30,14 @@ function Gallery() {
       </Swiper>
 
       {/* 썸네일 그리드 */}
-      <div className="grid grid-cols-3 gap-2">
-        {images.map((src, idx) => (
-          
-          <img
-            key={idx}
-            src={src}
-            alt={`thumb-${idx}`}
-            onClick={() => goToSlide(idx)}
-            className="w-full h-24 object-cover rounded cursor-pointer hover:scale-105 transition"
-          />
+      <ul className='grid grid-cols-3 gap-1.5'>
+        {images.map((src,idx)=> (
+          <li key={idx} className='relative w-full after:block after:content:"" after:pb-[100%]'>
+            <img src={src}      onClick={() => goToSlide(idx)} alt="갤러리이미지" className='w-full absolute h-full left-0 object-cover rounded-lg  cursor-pointer hover:scale-105'/>
+          </li>
         ))}
-      </div>
+      </ul>
+
   </div>)
 }
 

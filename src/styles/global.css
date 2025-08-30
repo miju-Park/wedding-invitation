@@ -1,20 +1,11 @@
-@font-face {
-  font-family: "NanumSquareRound";
-  src: url("/fonts/NanumSquareRoundR.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "NanumJungHagSaeng";
-  src: url("/fonts/NanumJungHagSaeng.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 @import "tailwindcss";
+@import "./fonts.css";
 
 @theme {
   --font-sans: "NanumSquareRound", "sans-serif";
   --font-nanum: "NanumJungHagSaeng", "sans-serif";
+}
+
+body {
+  font-family: "NanumJungHagSaeng";
 }
