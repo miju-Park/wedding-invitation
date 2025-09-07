@@ -62,9 +62,9 @@ function Calendar() {
   }, []);
 
   return (
-    <div className="font-sans max-w-md mx-auto p-4 text-center">
+    <div className="font-maru max-w-md mx-auto p-4 text-center">
       {/* <img src={flower} alt="flower" className="mx-auto w-24 mb-4" /> */}
-      <h3 className="font-nanum mb-2 text-center leading-snug">
+      <h3 className="mb-2 text-base text-center leading-snug">
         2025년 11월 22일 토요일 오후 1시
       </h3>
       <div className="h-px bg-gray-300 my-4"></div>
@@ -88,7 +88,7 @@ function Calendar() {
       </div>
 
    
-      <div className="font-nanum text-gray-500">
+      <div className="text-base text-gray-500">
         신랑♥신부의 결혼식 <span className="text-red-400 font-semibold">{timeLeft.days}일</span> 전
       </div>
     </div>

@@ -4,8 +4,9 @@
 @theme {
   --font-sans: "NanumSquareRound", "sans-serif";
   --font-nanum: "NanumJungHagSaeng", "sans-serif";
+  --font-maru: "MaruBuri", "sans-serif";
 }
 
 body {
-  font-family: "NanumJungHagSaeng";
+  font-family: "MaruBuri";
 }

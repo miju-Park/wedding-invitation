@@ -92,13 +92,13 @@ export default function NoticesSwiper() {
                 >
                   {slide.title}
                 </h3>
-                <p
+                <div
                   className={`mt-2 text-sm ${
                     isActive ? "text-gray-600" : "text-transparent"
                   }`}
                 >
                   {slide.desc}
-                </p>
+                </div>
               </div>
             </CarouselItem>
           )

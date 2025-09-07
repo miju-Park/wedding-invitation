@@ -21,9 +21,10 @@ export default function Account({ title, accounts }: AccountProps) {
     }
   }, [open]);
 
-  const handleCopy = async (account:string) => {
+  const handleCopy = async (bank:string, account:string) => {
     try {
-      await navigator.clipboard.writeText(account);
+      const copyText = `${bank.replace("은행","")} ${account.replaceAll("-", "")}`
+      await navigator.clipboard.writeText(copyText);
       toast.success("클립보드에 복사되었습니다!");
     } catch (err) {
       toast.error("복사에 실패했습니다.");
@@ -47,7 +48,7 @@ export default function Account({ title, accounts }: AccountProps) {
         {accounts.map(({ name, bank, account }) => (
           <div key={account} className="account-item">
             <div className="flex items-center gap-1">
-              <Copy className="cursor-pointer" onClick={()=>handleCopy(account)}/> {name}
+              <Copy className="cursor-pointer" onClick={()=>handleCopy(bank, account)}/> {name}
             </div>
             <div>
               {bank} {account}

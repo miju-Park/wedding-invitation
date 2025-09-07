@@ -8,6 +8,7 @@ import MapNavigationButtons from "../components/MapNavigationButtons";
 import Account from "../components/Account";
 import NoticesSwiper from "../components/NoticesSwiper";
 import IntroTyping from "../components/IntroTyping.astro";
+import { Share } from "../components/Share";
 
 const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
 ---
@@ -25,10 +26,10 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
       data-aos="fade-up"
       data-aos-delay="5300"
     >
-      <h1 class="font-noto text-3xl md:text-5xl font-bold text-red-300">
+      <h1 class="font-nanum text-3xl md:text-5xl font-bold text-red-300">
         We’re Getting Married!
       </h1>
-      <div class="text-xl md:text-2xl text-black">
+      <div class="text-xl text-black">
         <p>2025.11.22 (토) 13:00</p>
         <p>세인트메리엘 메리엘홀</p>
       </div>
@@ -36,8 +37,8 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
   </section>
 
   <section class="py-20 text-center px-6" data-aos="fade-up">
-    <p class="text-red-300 tracking-widest">INVITATION</p>
-    <h2 class="text-red-300 text-2xl font-semibold mb-6">
+    <p class="text-red-300 tracking-widest font-nanum">INVITATION</p>
+    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
       소중한 분들을 초대합니다.
     </h2>
     <div class="whitespace-pre-line">
@@ -67,24 +68,29 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
 
   <section class="py-20 text-center px-6" data-aos="fade-up">
     <div>
-      <h2 class="text-red-300 text-3xl font-semibold mb-6">예식 안내</h2>
+      <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+        예식 안내
+      </h2>
       <p>세인트메리엘 1층 메리엘홀</p>
       <Calendar client:load />
     </div>
   </section>
 
   <section class="py-20 text-center px-6" data-aos="fade-up">
-    <p class="text-red-300 text-3xl tracking-widest">GALLERY</p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6">갤러리</h2>
+    <p class="text-red-300 text-3xl tracking-widest font-nanum">GALLERY</p>
+    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">갤러리</h2>
 
     <h2 class="mb-2">저희의 추억이 담긴 사진을 함께 나눕니다.</h2>
-    <p class="mb-6">기쁜 마음으로 준비한 순간들, 천천히 둘러봐 주세요.</p>
+    <p>기쁜 마음으로 준비한 순간들,</p>
+    <p class="mb-6">천천히 둘러봐 주세요.</p>
     <Gallery client:load />
   </section>
 
   <section class="py-20 text-center" data-aos="fade-up">
-    <p class="text-red-300 text-3xl tracking-widest">LOCATION</p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6">오시는 길</h2>
+    <p class="text-red-300 text-3xl tracking-widest font-nanum">LOCATION</p>
+    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+      오시는 길
+    </h2>
     <p class="text-center">세인트메리엘 1층 메리엘홀</p>
     <p class="text-center text-gray-500 mb-4">서울 강남구 논현로79길 72</p>
     <NaverMap
@@ -175,8 +181,12 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
   </section>
 
   <section class="py-20 text-center" data-aos="fade-up">
-    <p class="text-red-300 text-lg opacity-60 tracking-widest">ACCOUNT</p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6">마음 전하실 곳</h2>
+    <p class="text-red-300 text-lg opacity-60 tracking-widest font-nanum">
+      ACCOUNT
+    </p>
+    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+      마음 전하실 곳
+    </h2>
     <div class="whitespace-pre-line mb-10">
       <p>참석이 어려우신 분들을 위해</p>
       <p>계좌번호를 기재하였습니다.</p>
@@ -189,7 +199,6 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
           title="신랑측"
           accounts={[
             { name: "고영덕", bank: "우리은행", account: "11111111" },
-            { name: "김성분", bank: "우리은행", account: "11111111" },
             { name: "고승현", bank: "우리은행", account: "11111111" },
           ]}
         />
@@ -200,21 +209,32 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
           title="신부측"
           accounts={[
             // { name: "박상기", bank: "우리은행", account: "11111111" },
-            { name: "김흥순", bank: "우리은행", account: "11111111" },
-            { name: "박미주", bank: "우리은행", account: "1002645365279" },
+            { name: "김흥순", bank: "부산은행", account: "041-12-065816-3" },
+            { name: "박미주", bank: "우리은행", account: "1002-645-365279" },
           ]}
         />
       </div>
     </div>
   </section>
 
-  <section class="py-20 text-center" data-aos="fade-up">
-    <p class="text-red-300 text-lg opacity-60 tracking-widest">INFORMATION</p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6">
+  <section class="pt-20 pb-10 text-center" data-aos="fade-up">
+    <p class="text-red-300 text-lg opacity-60 tracking-widest font-nanum">
+      INFORMATION
+    </p>
+    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
       예식정보 및 안내사항
     </h2>
     <div class="whitespace-pre-line mb-10 font-sans text-sm">
       <NoticesSwiper client:load />
     </div>
   </section>
+  <!-- <section class="pt-10 pb-20 text-center" data-aos="fade-up">
+    <p class="text-red-300 text-lg opacity-60 tracking-widest font-nanum">
+      SHARE
+    </p>
+    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+      공유하기
+    </h2>
+    <Share />
+  </section> -->
 </BaseLayout>

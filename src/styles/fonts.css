@@ -15,3 +15,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "MaruBuri";
+  src: url("../assets/fonts/MaruBuri-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
