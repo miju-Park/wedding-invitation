@@ -4,11 +4,12 @@ import "../styles/global.css";
 import Calendar from "../components/Calendar";
 import Gallery from "../components/Gallery";
 import NaverMap from "../components/NaverMap";
-import MapNavigationButtons from "../components/MapNavigationButtons";
+
 import Account from "../components/Account";
 import NoticesSwiper from "../components/NoticesSwiper";
 import IntroTyping from "../components/IntroTyping.astro";
-import { Share } from "../components/Share";
+
+import { Location } from "../components/Location";
 
 const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
 ---
@@ -100,84 +101,7 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
       longitude={127.0328914}
       clientId={clientKey}
     />
-    <div class="text-start pt-10 font-sans text-sm space-y-2">
-      <h3 class="font-bold text-brown-700">네비게이션 이용 시</h3>
-      <p>
-        서울 강남구 논현로 79길 72 올림피아센터 빌딩<br />
-        <span class="text-gray-500 text-xs">
-          (서울 강남구 역삼동 828-10 올림피아센터 빌딩)
-        </span>
-      </p>
-      <p class="text-xs">원하는 앱을 선택하시면 길안내가 시작됩니다.</p>
-      <MapNavigationButtons
-        client:load
-        lat={37.4960525}
-        lng={127.0328914}
-        placeName="세인트메리엘 메리엘홀"
-      />
-    </div>
-    <div class="text-start pt-10 font-sans text-sm space-y-2">
-      <h3 class="font-bold text-brown-700">지하철 이용 시</h3>
-      <div class="flex items-center gap-1">
-        <div class="rounded-full w-2 h-2 bg-[#3b9f37]"></div>2호선, <div
-          class="w-2 h-2 rounded-full bg-[#971f2d]"
-        >
-        </div>신분당선 강남역
-      </div>
-      <p class="ml-4 text-gray-500 text-xs">4번 출구, 도보 6분</p>
-      <p class="ml-4 text-gray-500 text-xs">
-        1번 출구에서 셔틀버스 운행 (예식 한 시간 전부터 운행)
-      </p>
-    </div>
-
-    <div class="text-start pt-10 font-sans text-sm space-y-2">
-      <h3 class="font-bold text-brown-700">버스 이용 시</h3>
-      <p>역삼1동주민센터</p>
-      <div class="flex items-center gap-1 text-gray-500 text-xs">
-        <span class="text-[#3165a8]">●</span>간선 040
-      </div>
-
-      <div class="mt-2">신분당선.강남역4번출구</div>
-      <div class="flex items-center gap-1 text-gray-500 text-xs">
-        <span class="text-[#3b9f37]">●</span>
-        간선 341, <span class="text-[#3165a8]">●</span> 지선 4312,
-        <span class="text-[#6fb26c]">●</span>
-        마을 서초03
-      </div>
-      <div class="text-gray-500 text-xs">
-        <span class="text-[#dd5c32]">●</span> 광역 6247, 9700, G7426, 이음2, 9500,
-        9501, 9802, M6427, M6450, M6457, M7412
-      </div>
-
-      <p class="mt-2">신분당선강남역(중)</p>
-      <div class="text-gray-500 text-xs">
-        <span style="color:#3b9f37;">●</span> 지선 917, 0411
-      </div>
-      <div class="text-gray-500 text-xs">
-        <span style="color:#3165a8;">●</span> 간선 140, 400, 402, 420, 421, 440,
-        441, 452, 470, 643, 741, N37
-      </div>
-      <div class="text-gray-500 text-xs">
-        <span style="color:#dd5c32;">●</span> 광역 1550, 1560B, 1570, 3030, 3100,
-        3100N, 4401, 4402, 5001-1B, 5001B, 5002B, 5003B, 9202, 9400, 9800, 9404,
-        9408, 9409, 9711, M6458
-      </div>
-      <div class="text-gray-500 text-xs">
-        <span style="color:#6ca8ce;">●</span> 공항 6009
-      </div>
-
-      <p class="mt-2">강남역티월드</p>
-      <div class="text-gray-500 text-xs">
-        <span style="color:#dd5c32;">●</span> 광역 1241, 4403, 9004, 9700, 9711,
-        M4403
-      </div>
-
-      <p class="mt-2">강남역도씨에빛</p>
-      <div class="text-gray-500 text-xs">
-        <span style="color:#dd5c32;">●</span> 광역 1311, 1311B, 3100, 3100N, 5200,
-        5300, 5300-1전, G7426, 9500, 9501, 9802, M6450, M6457
-      </div>
-    </div>
+    <Location client:load />
   </section>
 
   <section class="py-20 text-center" data-aos="fade-up">
