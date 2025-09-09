@@ -10,6 +10,7 @@ import NoticesSwiper from "../components/NoticesSwiper";
 import IntroTyping from "../components/IntroTyping.astro";
 
 import { Location } from "../components/Location";
+import { Share } from "../components/Share";
 
 const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
 ---
@@ -152,13 +153,13 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
       <NoticesSwiper client:load />
     </div>
   </section>
-  <!-- <section class="pt-10 pb-20 text-center" data-aos="fade-up">
+  <section class="pt-10 pb-20 text-center" data-aos="fade-up">
     <p class="text-red-300 text-lg opacity-60 tracking-widest font-nanum">
       SHARE
     </p>
     <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
       공유하기
     </h2>
-    <Share />
-  </section> -->
+    <Share client:load />
+  </section>
 </BaseLayout>
