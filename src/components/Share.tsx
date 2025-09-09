@@ -27,7 +27,7 @@ export const Share = () => {
     }
   };
   return (
-    <div className="flex items-center gap-2 justify-center mx-auto">
+    <div className="flex items-center gap-4 justify-center mx-auto">
       <div
         className="cursor-pointer"
         id="kakaotalk-share-btn"
@@ -39,7 +39,7 @@ export const Share = () => {
           alt="카카오톡 공유 보내기 버튼"
         />
       </div>
-      <Link onClick={handleCopy} className="cursor-pointer" />
+      <Link onClick={handleCopy} className="cursor-pointer size-8" />
     </div>
   );
 };
