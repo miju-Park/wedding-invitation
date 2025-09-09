@@ -1,6 +1,9 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
 import "swiper/css";
+import 'swiper/css/navigation';
 import generateImageUrl from "../js/generateImageUrl";
 
 const Image = ({ src, goSlide }: { src: string; goSlide: () => void }) => {
@@ -15,6 +18,7 @@ const Image = ({ src, goSlide }: { src: string; goSlide: () => void }) => {
           srcSet={generateImageUrl({
             filename: src,
             format: "webp",
+            option: "w_120,ar_1:1,c_fill",
           })}
           type="image/webp"
         />
@@ -22,6 +26,7 @@ const Image = ({ src, goSlide }: { src: string; goSlide: () => void }) => {
           src={generateImageUrl({
             filename: src,
             format: "jpg",
+            option: "w_120,ar_1:1,c_fill",
           })}
           alt="photo"
           className="w-full absolute h-full left-0 object-cover rounded-lg  cursor-pointer hover:scale-105"
@@ -48,14 +53,23 @@ function Gallery() {
   return (
     <div>
       <Swiper
+          style={{
+            '--swiper-navigation-color': '#fff'
+            
+          }}
+        navigation={true}
+        modules={[Navigation]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         spaceBetween={10}
         slidesPerView={1}
-        className="mb-6 rounded overflow-hidden flex items-center h-full"
+        className="mb-6 rounded overflow-hidden [&>.swiper-wrapper]:flex [&>.swiper-wrapper]:items-center"
       >
         {images.map((src, idx) => (
-          <SwiperSlide key={idx} className="h-full justify-center items-center! flex!">
-            <picture className="h-full">
+          <SwiperSlide
+            key={idx}
+            className="h-full justify-center items-center flex"
+          >
+            <picture>
               <source
                 className="w-full object-contain rounded-lg mx-auto h-full"
                 srcSet={generateImageUrl({
