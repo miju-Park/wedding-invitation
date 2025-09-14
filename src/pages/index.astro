@@ -24,13 +24,11 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
     <IntroTyping />
     <!-- 텍스트 콘텐츠 -->
     <div
-      class="absolute top-0 py-16 z-10 flex flex-col justify-between h-full w-full text-center"
+      class="absolute h-[98vh] top-0 py-16 z-10 flex flex-col justify-between w-full text-center"
       data-aos="fade-up"
       data-aos-delay="5300"
     >
-      <h1 class="font-nanum text-3xl md:text-5xl font-bold text-red-300">
-        We’re Getting Married!
-      </h1>
+      <h1 class="text-3xl font-bold text-[#7F1734]">We’re Getting Married!</h1>
       <div class="text-xl text-black">
         <p>2025.11.22 (토) 13:00</p>
         <p>세인트메리엘 메리엘홀</p>
@@ -38,9 +36,13 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
     </div>
   </section>
 
-  <section class="py-20 text-center px-6" data-aos="fade-up">
-    <p class="text-red-300 tracking-widest font-nanum">INVITATION</p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+  <section class="py-10 text-center px-6" data-aos="fade-up">
+    <p
+      class="text-[#7F1734] text-base font-extrabold tracking-widest font-maru"
+    >
+      INVITATION
+    </p>
+    <h2 class="text-[#7F1734] text-base font-extrabold mb-6 font-maru">
       소중한 분들을 초대합니다.
     </h2>
     <div class="whitespace-pre-line">
@@ -53,7 +55,6 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
       <p>귀한 걸음 하시어 따뜻한 마음으로</p>
       <p>축복해 주시면 더 없는 기쁨이 되겠습니다.</p>
     </div>
-    <div class="h-px bg-red-200 w-[15%] mx-auto my-5"></div>
     <div>
       <p class="mb-2">
         고영덕 · 김성분<span class="text-gray-400"> 의 아들 </span><strong
@@ -68,9 +69,14 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
     </div>
   </section>
 
-  <section class="py-20 text-center px-6" data-aos="fade-up">
+  <section class="py-10 text-center px-6" data-aos="fade-up">
     <div>
-      <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+      <p
+        class="text-[#7F1734] text-base font-extrabold tracking-widest font-maru"
+      >
+        DATE
+      </p>
+      <h2 class="text-[#7F1734] text-base font-extrabold mb-6 font-maru">
         예식 안내
       </h2>
       <p>세인트메리엘 1층 메리엘홀</p>
@@ -78,9 +84,15 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
     </div>
   </section>
 
-  <section class="py-20 text-center px-6" data-aos="fade-up">
-    <p class="text-red-300 text-3xl tracking-widest font-nanum">GALLERY</p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">갤러리</h2>
+  <section class="py-10 text-center px-6" data-aos="fade-up">
+    <p
+      class="text-[#7F1734] text-base font-extrabold tracking-widest font-maru"
+    >
+      GALLERY
+    </p>
+    <h2 class="text-[#7F1734] text-base font-extrabold mb-6 font-maru">
+      갤러리
+    </h2>
 
     <h2 class="mb-2">저희의 추억이 담긴 사진을 함께 나눕니다.</h2>
     <p>기쁜 마음으로 준비한 순간들,</p>
@@ -88,9 +100,13 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
     <Gallery client:load />
   </section>
 
-  <section class="py-20 text-center" data-aos="fade-up">
-    <p class="text-red-300 text-3xl tracking-widest font-nanum">LOCATION</p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+  <section class="py-10 text-center" data-aos="fade-up">
+    <p
+      class="text-[#7F1734] text-base font-extrabold tracking-widest font-maru"
+    >
+      LOCATION
+    </p>
+    <h2 class="text-[#7F1734] text-base font-extrabold mb-6 font-maru">
       오시는 길
     </h2>
     <p class="text-center">세인트메리엘 1층 메리엘홀</p>
@@ -98,18 +114,19 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
     <NaverMap
       client:load
       latitude={37.4960525}
-      ,
       longitude={127.0328914}
       clientId={clientKey}
     />
     <Location client:load />
   </section>
 
-  <section class="py-20 text-center" data-aos="fade-up">
-    <p class="text-red-300 text-lg opacity-60 tracking-widest font-nanum">
+  <section class="py-10 text-center" data-aos="fade-up">
+    <p
+      class="text-[#7F1734] text-base font-extrabold tracking-widest font-maru"
+    >
       ACCOUNT
     </p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+    <h2 class="text-[#7F1734] text-base font-extrabold mb-6 font-maru">
       마음 전하실 곳
     </h2>
     <div class="whitespace-pre-line mb-10">
@@ -123,8 +140,8 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
           client:load
           title="신랑측"
           accounts={[
-            { name: "고영덕", bank: "우리은행", account: "11111111" },
             { name: "고승현", bank: "우리은행", account: "11111111" },
+            { name: "고영덕", bank: "우리은행", account: "11111111" },
           ]}
         />
       </div>
@@ -133,31 +150,35 @@ const clientKey = import.meta.env.PUBLIC_NAVER_MAP_CLIENT_KEY;
           client:load
           title="신부측"
           accounts={[
+            { name: "박미주", bank: "우리은행", account: "1002-645-365279" },
             // { name: "박상기", bank: "우리은행", account: "11111111" },
             { name: "김흥순", bank: "부산은행", account: "041-12-065816-3" },
-            { name: "박미주", bank: "우리은행", account: "1002-645-365279" },
           ]}
         />
       </div>
     </div>
   </section>
 
-  <section class="pt-20 pb-10 text-center" data-aos="fade-up">
-    <p class="text-red-300 text-lg opacity-60 tracking-widest font-nanum">
+  <section class="py-10 text-center" data-aos="fade-up">
+    <p
+      class="text-[#7F1734] text-base font-extrabold tracking-widest font-maru"
+    >
       INFORMATION
     </p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+    <h2 class="text-[#7F1734] text-base font-extrabold mb-6 font-maru">
       예식정보 및 안내사항
     </h2>
     <div class="whitespace-pre-line mb-10 font-sans text-sm">
       <NoticesSwiper client:load />
     </div>
   </section>
-  <section class="pt-10 pb-20 text-center" data-aos="fade-up">
-    <p class="text-red-300 text-lg opacity-60 tracking-widest font-nanum">
+  <section class="py-4 text-center" data-aos="fade-up">
+    <p
+      class="text-[#7F1734] text-base font-extrabold tracking-widest font-maru"
+    >
       SHARE
     </p>
-    <h2 class="text-red-300 text-3xl font-semibold mb-6 font-nanum">
+    <h2 class="text-[#7F1734] text-base font-extrabold mb-6 font-maru">
       공유하기
     </h2>
     <Share client:load />

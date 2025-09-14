@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 // import flower from '../images/flower.png'
 
 function CalendarDay({ day, isWeddingDay, isHoliday=false }:{ day: number, isWeddingDay: boolean, isHoliday?: boolean }) {
@@ -14,7 +14,7 @@ function CalendarDay({ day, isWeddingDay, isHoliday=false }:{ day: number, isWed
   return (
     <div
       className={`w-10 h-10 flex items-center justify-center rounded-full text-sm ${textColor} ${
-        isWeddingDay ? 'text-white border animate-pulse bg-red-400' : ''
+        isWeddingDay ? 'text-white border animate-pulse bg-[#7F1734]' : ''
       }`}
     >
       {day}
@@ -28,37 +28,32 @@ function Calendar() {
   const emptyDays = Array.from({ length: firstDayOfWeek }, () => null);
   const days = Array.from({ length: daysInMonth }, (_, index) => index + 1);
 
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
+  const [displayDays, setDisplayDays] = useState('');
 
   useEffect(() => {
+    const targetDate = new Date("2025-11-22T13:00:00+09:00").getTime();
+  
     const updateTimer = () => {
-      const currentDate = new Date().getTime();
-      const targetDate = new Date('2025-11-22T13:00:00+0900').getTime();
-      const timeDiffMs = targetDate - currentDate;
-      const timeDiff = Math.floor(timeDiffMs / 1000);
+      const diffMs = targetDate - Date.now();
+  
+      const totalSeconds = Math.max(0, Math.floor(diffMs / 1000));
+  
+      // 오늘 제외 방식
+      const days = Math.ceil(totalSeconds / 86400);
 
-      if (timeDiff > 0) {
-        const days = Math.floor(timeDiff / 86400);
-        const hours = Math.floor(
-          (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+      setDisplayDays(()=>{
+        if(totalSeconds<=0) {
+          return '종료'
+        } 
+        if(days===0 ){
+          return '오늘'
+        }
+        return `${days}일 전`
+      })
 
-        setTimeLeft({ days, hours, minutes, seconds });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
     };
-
-    const timer = setInterval(updateTimer, 1000);
-    return () => clearInterval(timer);
+    updateTimer();
+  
   }, []);
 
   return (
@@ -89,7 +84,7 @@ function Calendar() {
 
    
       <div className="text-base text-gray-500">
-        신랑♥신부의 결혼식 <span className="text-red-400 font-semibold">{timeLeft.days}일</span> 전
+        승현♥미주의 결혼식 <span className="text-[#7F1734] font-semibold"> {displayDays}</span>
       </div>
     </div>
   );
