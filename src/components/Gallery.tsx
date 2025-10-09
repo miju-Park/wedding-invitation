@@ -69,7 +69,7 @@ function Gallery() {
           {images.map((src, idx) => (
             <SwiperSlide
               key={idx}
-              className="flex justify-center items-center w-screen h-screen"
+              className="!flex justify-center items-center w-screen h-screen"
             >
               <picture>
                 <source
